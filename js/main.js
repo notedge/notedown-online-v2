@@ -31,6 +31,5 @@ const config = {
 }
 
 
-
 $(function () { editormd("notedown_editor", config) });
 

@@ -1,154 +1,146 @@
-* {
-    padding: 0;
-    margin: 0;
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
 }
 
-*,
-*:before,
-*:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    margin: 0;
-    padding: 0;
+::-webkit-scrollbar {
+    height: 0.4rem;
+    width: 0.4rem;
+    background-color: #f5f5f5;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary {
-    display: block;
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    background-color: #555;
 }
 
-audio,
-canvas,
-video {
-    display: inline-block;
+#notedown_editor {
+    width: 100% !important;
 }
 
-img {
-    border: none;
-    vertical-align: middle;
+.undercover {
+    padding: 3px 5px;
+    font-size: small;
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none;
 }
 
-ul,
-ol {
-    /*list-style: none;*/
+.undercover:hover,
+.undercover:active,
+.undercover.off {
+    transition: color 0.13s linear;
+    color: #fff;
 }
 
-.clear {
-    *zoom: 1; /* for IE 6/7 */
+blockquote {
+    margin: 2em 0;
+    padding: 10px 20px;
+    position: relative;
+    color: rgba(52, 73, 94, 0.8);
+    background-color: rgba(192, 91, 77, 0.05);
+    border-left: 3px solid rgba(192, 91, 77, 0.3);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
 }
 
-.clear:before,
-.clear:after {
-    height: 0;
-    content: "";
-    font-size: 0;
-    display: table;
-    line-height: 0; /* for Opera */
-    visibility: hidden;
+.markdown-body blockquote p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.clear:after {
-    clear: both;
+blockquote.fancyquote {
+    position: relative;
 }
 
-body {
-    font-size: 14px;
-    color: #666;
-    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei,
-        "华文细黑", STHeiti, "Helvetica Neue", Helvetica, Tahoma, "Droid Sans",
-        "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti,
-        "黑体", sans-serif;
-    background: #fff;
+blockquote.fancyquote:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: -14.5px;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
     text-align: center;
+    color: #fff;
+    background-size: 16px 16px;
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
 }
 
-#layout {
-    text-align: left;
+blockquote.fancyquote.info {
+    border-color: #209cee;
+    background-color: #def0fd;
 }
 
-#layout > header,
-.btns {
-    padding: 15px 0;
-    width: 90%;
-    margin: 0 auto;
+blockquote.fancyquote.info:before {
+    background-color: #209cee;
+    background-image: url("../assets/info.svg");
 }
 
-.btns {
-    padding-top: 0;
+blockquote.fancyquote.success {
+    border-color: #23d160;
+    background-color: #cbf6da;
 }
 
-.btns button {
-    padding: 2px 8px;
+blockquote.fancyquote.success:before {
+    background-color: #23d160;
+    background-image: url("../assets/success.svg");
 }
 
-#layout > header > h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
+blockquote.fancyquote.warning {
+    border-color: #ffdd57;
+    background-color: #fff6d1;
 }
 
-.btns button,
-.btn {
-    padding: 8px 10px;
-    background: #fff;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    cursor: pointer;
-    -webkit-transition: background 300ms ease-out;
-    transition: background 300ms ease-out;
+blockquote.fancyquote.warning:before {
+    background-color: #ffdd57;
+    background-image: url("../assets/warning.svg");
 }
 
-.btns button:hover,
-.btn:hover {
-    background: #f6f6f6;
+blockquote.fancyquote.danger {
+    border-color: #ff3860;
+    background-color: #ffb3c2;
+}
+
+blockquote.fancyquote.danger:before {
+    background-color: #ff3860;
+    background-image: url("../assets/danger.svg");
+}
+
+.math {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.MathJax {
+    outline: 0;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125);
+}
+
+table thead {
+    background: #f5f5f5;
+}
+
+table th,
+table td {
+    padding: 5px 15px;
+    border: 1px double #ededed;
+}
+
+table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.markdown-body table {
+    display: inline-table;
 }
