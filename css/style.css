@@ -144,3 +144,8 @@ table tr:hover {
 .markdown-body table {
     display: inline-table;
 }
+
+
+.cm-trailingspace{
+background-image: unset !important;
+}
